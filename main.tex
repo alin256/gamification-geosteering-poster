@@ -23,20 +23,17 @@
 
 %%% Color Definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\definecolor{boxcolorsimple}{HTML}{F7F6F8} 
+% \definecolor{boxcolorsimple}{RGB}{186,231,185} 
+\definecolor{boxcolordetails}{HTML}{D6E4E5}
+\definecolor{boxcolorexplanation}{HTML}{CECFD4}
+\definecolor{boxcolorexamples}{HTML}{FFFFFF}
+\definecolor{headercolfade}{RGB}{0,138,143}
 \definecolor{bordercol}{RGB}{34,39,66}
-% \definecolor{headercol1}{RGB}{186,215,230}
-% \definecolor{headercol2}{RGB}{80,80,80} %7	62	137
-% \definecolor{headerfontcol}{RGB}{0,0,0}
-% \definecolor{boxcolor}{RGB}{186,215,230}
-
-
-
-\definecolor{boxcolorsimple}{RGB}{186,231,185} 
-\definecolor{boxcolordetails}{RGB}{170,205,213}
-\definecolor{boxcolorexplanation}{RGB}{205,190,160}
-\definecolor{boxcolorexamples}{RGB}{170,205,213}
-\definecolor{headercolfade}{RGB}{34,39,66}
-
+% \definecolor{bordercol}{RGB}{0,138,143}
+% \definecolor{headercolfade}{RGB}{34,39,66}
 
 
 % \definecolor{highlightcolor}{RGB}{0,0,0}
@@ -53,7 +50,12 @@
 % 	headerColorOne=boxcolorsimple, 
 % 	headerColorTwo=headercolfade
 \newcommand{\blockbasic}[3]{
-	\headerbox{#1}{name=#2,#3}{
+	\headerbox{#1}{name=#2,#3
+	,
+	boxColorOne=boxcolorsimple,
+	headerColorOne=boxcolorsimple, 
+	headerColorTwo=headercolfade
+}{
 	\startblockmodifiers
 	\input{#2}
 	}
