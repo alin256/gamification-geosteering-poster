@@ -1,0 +1,55 @@
+
+@article{multi-modal-journal,
+    author = {Alyaev, Sergey and Elsheikh, Ahmed H.},
+    title = {Direct Multi-Modal Inversion of Geophysical Logs Using Deep Learning},
+    journal = {Earth and Space Science},
+    volume = {9},
+    number = {9},
+    pages = {e2021EA002186},
+    keywords = {geophysical inversion, multi-modal inversion, deep neural network, mixture density network, well-log interpretation, stratigraphic-based geosteering},
+    doi = {https://doi.org/10.1029/2021EA002186},
+    url = {https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2021EA002186},
+    eprint = {https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2021EA002186},
+    note = {e2021EA002186 2021EA002186},
+    abstract = {Abstract Geosteering of wells requires fast interpretation of geophysical logs which is a non-unique inverse problem. Current work presents a proof-of-concept approach to multi-modal probabilistic inversion of logs using a single evaluation of an artificial deep neural network (DNN). A mixture density DNN (MDN) is trained using the ”multiple-trajectory-prediction” loss functions, which avoids mode collapse typical for traditional MDNs, and allows multi-modal prediction ahead of data. The proposed approach is verified on the real-time stratigraphic inversion of gamma-ray logs. The multi-modal predictor outputs several likely inverse solutions/predictions, providing more accurate and realistic solutions compared to a deterministic regression using a DNN. For these likely stratigraphic curves, the model simultaneously predicts their probabilities, which are implicitly learned from the training geological data. The stratigraphy predictions and their probabilities obtained in milliseconds from the MDN can enable better real-time decisions under geological uncertainties.},
+    year = {2022}
+}
+
+@proceedings{multi-modal-spwla,
+    author = {Alyaev, Sergey and Ambrus, Adrian and Jahani, Nazanin and Elsheikh, Ahmed H.},
+    title = "{Sequential Multi-Realization Probabilistic Interpretation of Well Logs and Geological Prediction by a Deep-Learning Method}",
+    volume = {Day 5 Wed, June 15, 2022},
+    series = {SPWLA Annual Logging Symposium},
+    year = {2022},
+    month = {06},
+    abstract = "{The majority of geosteering operations rely on traditional shallow sensing logging tools as sources of information. Many such operations rely on stratigraphic-based steering when the logs from the drilled well are matched to logs from an offset well by modifying the lateral shape of stratigraphy. The match of the logs indicates a plausible interpretation, but due to the scarcity of log data in many situations, this interpretation is not unique. In manual workflows maintaining several likely interpretations is not realistic and in automated workflows, multiple interpretations are seldom used.We describe a deep neural network (DNN) that outputs a selected number of stratigraphic interpretations using a single evaluation of the input log data in two milliseconds. The input data defined prior to training consists of one or several log pairs consisting of one current lateral and one offset-well log. For each of the interpretations, the DNN also estimates the respective probability and can be configured to produce likely ahead-of-data predictions of the geology, which are based on the data mismatches and the likelihood of geological configurations with respect to the training dataset. The described probabilistic interpretation and prediction is enabled by the supervised training of a mixture density DNN (MDN) with a stable multiple-trajectory-prediction loss function.In this paper, we apply the MDN for the sequential interpretation of well logs. We use the interpretations and the probabilities from the previous interpretation step as starting points for the probabilistic interpretations and predictions for the current step. We avoid the curse of dimensionality by discarding the unlikely starting points. The batchable MDN evaluation enables tracking of hundreds of solutions while still maintaining sub-second performance, compared to minute(s) reported in other recent papers.The performance of the method is verified on synthetic test data as well as the realistic well data from the Geosteering World Cup 2020 (based on the Middle Woodford formation, located in the South Central Oklahoma Oil Province in the United States) and stratigraphic configurations provided by geologists. In all cases, the method manages to capture likely interpretations. At the same time, the accuracy of predictions deteriorates for the configurations which were not typical for the training dataset.}",
+    doi = {10.30632/SPWLA-2022-0112},
+    url = {https://doi.org/10.30632/SPWLA-2022-0112},
+    note = {D051S022R001},
+    eprint = {https://onepetro.org/SPWLAALS/proceedings-pdf/SPWLA22/5-SPWLA22/D051S022R001/2715484/spwla-2022-0112.pdf},
+}
+
+@proceedings{gwc-paper,
+    author = {Tadjer, Amine and Alyaev, Sergey and Miner, Dylan and Kuvaev, Igor and Bratvold, Reidar Brumer},
+    title = "{Unlocking the Human Factor: Geosteering Decision Making as a Component of Drilling Operational Efficacy}",
+    volume = {Day 2 Tue, July 27, 2021},
+    series = {SPE/AAPG/SEG Unconventional Resources Technology Conference},
+    year = {2021},
+    month = {07},
+    abstract = "{Geosteering of horizontal well is a technique designed to maximize the well's contact with a preferred section of the reservoir. Operators often reduce drilling costs by reducing the number and quality of downhole tools while relying more heavily on the talents of their geosteerers. As a result, the stratigraphic based steering (SBS) has become ubiquitous for North American horizontal wells. SBS allows the projection of any/all horizontal MWD/LWD logs onto the true vertical thickness within an offset well logs domain. Using SBS geosteerers correlate this ‘verticalized’ log data to nearby exploration wells (typewells), and also to log data acquired uphole on the current well, to determine local apparent bed dip and wellbore location relative to the geologic target. Thus, SBS provides tools to generate and rapidly update a local geomodel which helps make informed well-placement decisions in real-time. At the same time, SBS techniques and workflows can vary dramatically among geosteerers and universal guidelines for interpretation and decision making do not currently exist.In this paper, we analyze the SBS interpretations and decisions of 131 participants, representing six continents, of Geosteering World Cup (GWC) 2020. The GWC consisted of semifinal and final stages, each including one conventional and unconventional drilling simulation. All simulations were set-up based on real fields, from different regions, with varying formation dips and faults in the stratigraphy. Each simulation included a typical set of near-well logging tools, a pre-drill geological grid, and a designated geologic target zone (TZ) where the well was designed to be placed (every foot within the layer scored points). The geosteerers would target their wells and interpret the data generated for their unique well trajectory through a predefined model using a simulation function within a commercial SBS enabled geosteering software.SBS geosteering is a reason-based choice process that answers the question "Where am I?" and uses the information available to decide "What to do next?". However, making these decisions is quite challenging because there is typically no direct measurement of what is ahead of the bit. We performed statistical analysis of GWC data to deduce how the geosteerers addressed these two questions. We highlight the differences in well positioning strategy with respect to the pre-drill grid, their own interpretation of the location of the TZ, and their responses when confronted with structural changes, such as faults bed dip inflections. Our results show that the quality of interpretation does not always correlate with the quality of the resulting well.The studied empirical data produced in a controlled environment shines a light on better practices for SBS, which can be formulated as guidelines for geosteering training. At the same time, the gaps in data are identified, thus suggesting the changes to experimental set-up for further illuminate and unlock the geosteering human factor.}",
+    doi = {10.15530/urtec-2021-5385},
+    url = {https://doi.org/10.15530/urtec-2021-5385},
+    note = {D021S028R001},
+    eprint = {https://onepetro.org/URTECONF/proceedings-pdf/21URTC/2-21URTC/D021S028R001/2477627/urtec-2021-5385-ms.pdf},
+}
+
+@misc{trainingdata,
+author = {Alyaev, Sergey},
+publisher = {DataverseNO},
+title = {{Supporting Data for: Direct multi-modal inversion of geophysical logs using deep learning}},
+year = {2022},
+version = {V1},
+doi = {10.18710/1F9GYH},
+url = {https://doi.org/10.18710/1F9GYH},
+howpublished = {\url{https://doi.org/10.18710/1F9GYH}}
+}

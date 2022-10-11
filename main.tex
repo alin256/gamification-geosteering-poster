@@ -1,0 +1,361 @@
+\documentclass[a0paper,portrait,fontscale=0.27]{baposter}
+%\renewcommand{\baselinestretch}{2.2}
+%fontscale=0.292
+%showframe
+\usepackage{setspace}
+\usepackage{relsize}		% For \smaller
+\usepackage{url}			% For \url
+\usepackage{epstopdf}	
+\usepackage{amssymb}
+\usepackage{multicol}
+
+%\usepackage{pstricks}
+\usepackage{amsmath}
+% Included EPS files automatically converted to PDF to include with pdflatex
+%\usepackage{hyperref}
+
+
+
+%%% Global Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{pix/}}	% Root directory of the pictures 
+\tracingstats=2			% Enabled LaTeX logging with conditionals
+
+%%% Color Definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{bordercol}{RGB}{34,39,66}
+\definecolor{headercol1}{RGB}{186,215,230}
+% \definecolor{headercol1}{RGB}{60,132,137}
+\definecolor{headercol2}{RGB}{80,80,80} %7	62	137
+%\definecolor{headercol2}{RGB}{7,62,137}
+\definecolor{headerfontcol}{RGB}{0,0,0}
+\definecolor{boxcolor}{RGB}{186,215,230}
+% \definecolor{boxcolor}{RGB}{186,215,230}
+
+\definecolor{logofontcolor}{RGB}{7,62,137}
+\definecolor{logoorangecolor}{RGB}{241,113,25}
+\definecolor{logobluecolor}{RGB}{21,166,197}
+
+%\definecolor{glowcolor}{RGB}{255,255,255}
+%\definecolor{atcolor}{RGB}{0,0,0}
+
+\definecolor{atcolor}{RGB}{255,255,255}
+\definecolor{glowcolor}{RGB}{0,0,0}
+
+
+% \definecolor{boxcolorsimple}{RGB}{217,215,223}
+% \definecolor{boxcolordetails}{RGB}{171,221,226} 
+% \definecolor{boxcolorexplanation}{RGB}{34,39,66}
+% \definecolor{boxcolorexamples}{RGB}{253,238,179}%{239,211,202}
+
+% \definecolor{boxcolorsimple}{RGB}{255,255,255}
+% \definecolor{boxcolordetails}{RGB}{255,255,255} 
+% \definecolor{boxcolorexplanation}{RGB}{255,255,255}
+% \definecolor{boxcolorexamples}{RGB}{255,255,255}
+% \definecolor{headercolfade}{RGB}{132,63,64}
+
+\definecolor{headercolfade}{RGB}{35,39,64}
+
+
+%\definecolor{boxcolorexamples}{RGB}{175,217,217}
+
+
+\definecolor{boxcolorsimple}{RGB}{186,231,185} 
+\definecolor{boxcolordetails}{RGB}{170,205,213}
+\definecolor{boxcolorexplanation}{RGB}{205,190,160}
+\definecolor{boxcolorexamples}{RGB}{170,205,213}
+%\definecolor{headercolfade}{RGB}{132,63,64}
+
+
+\definecolor{highlightcolor}{RGB}{0,0,0}
+
+\newcommand{\hlt}[1]{{\bf\color{highlightcolor} #1}}
+
+\newcommand{\startblockmodifiers}{\sf
+	%\large
+	\vspace{-0.4em}
+}
+
+%\newcommand{\endblockmodifier}{
+%}
+
+
+\newcommand{\blockbasic}[3]{
+	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolorsimple,
+	headerColorOne=boxcolorsimple, headerColorTwo=headercolfade}{
+	\startblockmodifiers
+	\input{#2}
+	%\endblockmodifiers
+	}
+}
+
+\newcommand{\blockdetail}[3]{
+	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolordetails,
+	headerColorOne=boxcolordetails, headerColorTwo=headercolfade}{
+	\startblockmodifiers
+	\input{#2}
+	%\endblockmodifiers
+	}
+}
+
+\newcommand{\blockexplain}[3]{
+	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolorexplanation,
+	headerColorOne=boxcolorexplanation, headerColorTwo=headercolfade}{
+	\startblockmodifiers
+	\input{#2}
+	%\endblockmodifiers
+	}
+}
+
+
+\newcommand{\blockexample}[3]{
+	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolorexamples,
+	headerColorOne=boxcolorexamples, headerColorTwo=headercolfade}{
+	\startblockmodifiers
+	\input{#2}
+	%\endblockmodifiers
+	}
+}
+
+\newcommand{\TODO}[1]{{\bf\color{highlightcolor} TODO: #1}}
+
+\newcommand{\fig}[3]{
+%{\centering{\vspace{0.2em}
+%\smaller\it
+%	#1}
+\begin{center}
+\vspace{-0.5em}
+\smaller\it
+#1
+\includegraphics[height=#3em]{#2}
+\vspace{-0.9em}
+\end{center}
+}
+
+\newcommand{\figstwo}[5]{
+
+\begin{center}
+%\smaller
+\vspace{-0.5em}
+\begin{tabular}{cc}
+%\vspace{-0.5em}
+\smaller\it
+#1
+& 
+\smaller\it
+#3
+\\
+
+\includegraphics[height=#5em]{#2}
+%\vspace{-0.9em}
+&
+%\vspace{-0.5em}
+\includegraphics[height=#5em]{#4}
+%\vspace{-0.9em}
+\end{tabular}
+\end{center}
+}
+
+%\newcommand{\eqref}[1]{(\ref{#1})}
+
+\newcommand{\norm}[2]{\left\| #1 \right\|_{#2}}
+
+
+\newcommand{\normeddif}[4]{
+\norm{p_{#1}^{#2} - p_{#3}^{#4}}{L^2}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Utility functions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Save space in lists. Use this after the opening of the list %%%%%%%%%%%%%%%%
+\newcommand{\compresslist}{
+	\smaller
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\parsep}{0pt}
+}
+\renewcommand*\rmdefault{ppl}\normalfont\upshape
+%\renewcommand*\rmdefault{iwona}\normalfont\upshape
+%\usepackage{helvet}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Start %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\typeout{Poster rendering started}
+
+%%% Setting Background Image %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\background{
+%	\begin{tikzpicture}[remember picture,overlay]%
+%	\draw (current page.north west)+(-2em,2em) node[anchor=north west]
+%	{\includegraphics[height=1.1\textheight]{background}};
+%	\end{tikzpicture}
+%}
+
+%%% General Poster Settings %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Eye Catcher, Title, Authors and University Images %%%%%%%%%%%%%%%%%%%%%%
+\begin{poster}{
+	grid=false,
+	% Option is left on true though the eyecatcher is not used. The reason is
+	% that we have a bit nicer looking title and author formatting in the headercol
+	% this way
+	eyecatcher=true, 
+	borderColor=bordercol,
+% 	headerColorOne=headercol1,
+% 	headerColorTwo=headercol2,
+% 	headerFontColor=headerfontcol,
+	% Only simple background color used, no shading, so boxColorTwo isn't necessary
+	boxColorOne=boxcolor,
+% 	headershape=roundedright,
+	headerfont=\Large\bf, 
+	textborder=rectangle,
+	background=none,
+	headerborder=open,
+% 	boxshade=plain
+	%textfont=\sf
+}
+%\rm Roman.
+%\it Italics.
+%\em Emphasis (toggles between \it and \rm).
+%\emph (LaTeX2e emphasis command)
+%\bf Boldface.
+%\sl Slanted.
+%\sf Sans serif.
+%\sc Small caps.
+%\tt Typewriter.
+%%% Eye Cacther %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+	%Eye Catcher, empty if option eyecatcher=false - unused
+%\setlength\fboxsep{0pt}
+%\setlength\fboxrule{0.5pt}
+%	\fbox{
+%		\begin{minipage}{14em}
+%			\includegraphics[height=8em]{teaserCrop.pdf}
+			%Replace me
+%		\end{minipage}
+%	}
+
+}
+%%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\bf
+	%\hspace{1.7em}
+%\hspace{+0.9em}
+	%\renewcommand{\baselinestretch}{2.2}
+	%\raggedright
+	%\textls
+    % Sequential multi-realization probabilistic interpretation of well logs by a deep-learning method
+    % Probabilistic log interpretation and extrapolation with deep learning
+    AI multi-modal interpretation of logs 
+    % with AI \\
+    for ahead-of-bit prediction of ROP distribution 
+}
+%%% Authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\rm Roman.
+%\it Italics.
+%\em Emphasis (toggles between \it and \rm).
+%\emph (LaTeX2e emphasis command)
+%\bf Boldface.
+%\sl Slanted.
+%\sf Sans serif.
+%\sc Small caps.
+%\tt Typewriter.
+{\sf
+	\vspace{0.8em} 
+	Adrian Ambrus, Sergey Alyaev, Nazanin Jahani, Ahmed H. Elsheikh\\
+}
+%%% Logo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{
+% \setlength\fboxsep{0pt}
+% \setlength\fboxrule{0.5pt}
+% 	\fbox{
+% 		\begin{minipage}{8em}
+			\centering
+			\includegraphics[height=8em]{digiwells_logo_negative.png}
+% 			\\
+% 			\includegraphics[height=2em]{research-council-logo.png}
+% 		\end{minipage}
+% 	}
+}
+
+
+%%% The poster %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%The boxes start here
+
+\blockbasic{Motivation}{motivation}{column=0,row=0}
+
+%\blockbasic{Model problem}{modelProblem}{column=0,below=motivation}
+
+\blockexplain{Method}{method}{column=1,row=0,span=2}
+
+%end of column 0
+
+
+\blockdetail{Dataset description}{datasetDescription}{column=0,below=motivation}
+
+\blockexplain{Training details}{trainingDetails}{column=0,below=datasetDescription,above=bottom}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\blockexample{Numerical results}{numericalResults}{column=1,span=2,below=method}
+
+%\blockexample{Numerical results}{numericalResults2}{column=2,below=errorContributions}
+
+
+\blockbasic{Conclusions}{conclusion}{column=1,span=2,below=numericalResults}
+
+
+\blockexplain{References}{references}{column=1,span=2,below=conclusion,above=bottom}
+
+%\blockexplain{ROP prediction}{ropPrediction}{column=2,row=0,above=numericalResults}
+
+
+%\blockbasic{Aknowledgements}{aknowledgements}{column=2,below=references,above=numericalResults}
+
+
+
+%%% The end of the poster %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\headerbox{Basic Concepts}{name=definitions,column=0,below=motivation}{
+%\begin{equation}
+%	123
+%	\label{eq123}
+%\end{equation}
+%}
+
+%\headerbox{Models}{name=models,column=0,below=definitions}{
+%}
+
+%\headerbox{References}{name=references,column=0,below=models}{
+%%\smaller													% Make the whole text smaller
+%%\vspace{-0.4em} 										% Save some space at the beginning
+%%\bibliographystyle{plain}							% Use plain style
+%%\renewcommand{\section}[2]{\vskip 0.05em}		% Omit "References" title
+%%\begin{thebibliography}{1}							% Simple bibliography with widest label of 1
+%%\itemsep=-0.01em										% Save space between the separation
+%%\setlength{\baselineskip}{0.4em}					% Save space with longer lines
+%%\bibitem{prevWork1} Laszlo Gulyas, Richard Legendi: \emph{Effects of Sample Duration on Network Statistics in Elementary Models of Dynamic Networks}, International Conference on Computational Science, Singapore (2011) 
+%%\bibitem{prevWork2} Laszlo Gulyas, Susan Khor, Richard Legendi and George Kampis \emph{Cumulative Properties of Elementary Dynamic Networks}, The International Sunbelt Social Network Conference XXXI (2011)
+%%\bibitem{gulya-kampis1} Gulyas, Laszlo et al.: \emph{Betweenness Centrality Dynamics in Networks of Changing Density}. Presented at the 19th International Symposium on Mathematical Theory of Networks and Systems (MTNS 2010)
+%%\end{thebibliography}
+%}
+
+%\headerbox{Acknowledgements}{name=acknowledgements,column=0,below=references, above=bottom,boxColorOne=red, boxColorTwo=black}{
+%\smaller						% Make the whole text smaller
+%\vspace{-0.4em}			% Save some space at the beginning
+%} 
+
+%\headerbox{Dynamic Networks are Sensitive to Aggregation}{name=density,span=2,column=1,row=0,headerColorOne=black,headerColorTwo=white}{
+%}
+
+%%\headerbox{Degree Distribution Radically Changes}
+%%{name=degreeDistribution,span=2,column=1,below=density,above=bottom}{
+%%}
+
+%\blockbasic{End}{introduction}{span=2,column=1,below=density,above=bottom}
+
+\end{poster}
+\end{document}

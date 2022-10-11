@@ -1,0 +1,10 @@
+
+
+Many geosteering operations rely on strati-graphy-based steering, where logs from the drilled well are matched to logs from an offset well by modifying the lateral shape
+of stratigraphy until a visual match between logs is obtained. Such interpretations are not unique and picking a single  or averaging multiple interpretations can lead to errors. 
+
+Direct multi-modal inversion together with AI methods can improve real-time geosteering decisions and rate of penetration (\textbf{ROP}) predictions ahead of the bit.
+
+We developed an \textbf{AI} method which uses a deep mixture density network (\textbf{MDN}). The MDN outputs a selected number of stratigraphic interpretations based on the current and offset well logs. We  apply the MDN sequentially to track hundreds of realizations. Using the offset well log, we predict the ROP along the stratigraphic curve for each realization.
+
+The method's performance is verified on realistic well logs and stratigraphic data from the Geosteering World Cup (\textbf{GWC}) 2020.
