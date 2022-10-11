@@ -7,7 +7,7 @@ A multi-trajectory-prediction loss function is minimized during training. The lo
     loss = \alpha I_{class} + I_{MAE},
 \end{equation}
 
-where  MAE is mean absolute error, and $\alpha$ is a factor balancing the loss contributions. The classification loss penalizes the log probability mismatch between predicted and actual samples:
+where  MAE is mean absolute error, and $\alpha$ is a factor balancing the loss contributions. The classification loss penalizes the log probability mismatch between predicted and actual data:
 
 \begin{equation}
     I_{class} = -\log 
