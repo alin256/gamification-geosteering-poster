@@ -5,9 +5,9 @@
 \usepackage{setspace}
 \usepackage{relsize}		% For \smaller
 \usepackage{url}			% For \url
-\usepackage{epstopdf}	
+% \usepackage{epstopdf}	
 \usepackage{amssymb}
-\usepackage{multicol}
+% \usepackage{multicol}
 
 %\usepackage{pstricks}
 \usepackage{amsmath}
@@ -24,50 +24,22 @@
 %%% Color Definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \definecolor{bordercol}{RGB}{34,39,66}
-\definecolor{headercol1}{RGB}{186,215,230}
-% \definecolor{headercol1}{RGB}{60,132,137}
-\definecolor{headercol2}{RGB}{80,80,80} %7	62	137
-%\definecolor{headercol2}{RGB}{7,62,137}
-\definecolor{headerfontcol}{RGB}{0,0,0}
-\definecolor{boxcolor}{RGB}{186,215,230}
+% \definecolor{headercol1}{RGB}{186,215,230}
+% \definecolor{headercol2}{RGB}{80,80,80} %7	62	137
+% \definecolor{headerfontcol}{RGB}{0,0,0}
 % \definecolor{boxcolor}{RGB}{186,215,230}
 
-\definecolor{logofontcolor}{RGB}{7,62,137}
-\definecolor{logoorangecolor}{RGB}{241,113,25}
-\definecolor{logobluecolor}{RGB}{21,166,197}
-
-%\definecolor{glowcolor}{RGB}{255,255,255}
-%\definecolor{atcolor}{RGB}{0,0,0}
-
-\definecolor{atcolor}{RGB}{255,255,255}
-\definecolor{glowcolor}{RGB}{0,0,0}
-
-
-% \definecolor{boxcolorsimple}{RGB}{217,215,223}
-% \definecolor{boxcolordetails}{RGB}{171,221,226} 
-% \definecolor{boxcolorexplanation}{RGB}{34,39,66}
-% \definecolor{boxcolorexamples}{RGB}{253,238,179}%{239,211,202}
-
-% \definecolor{boxcolorsimple}{RGB}{255,255,255}
-% \definecolor{boxcolordetails}{RGB}{255,255,255} 
-% \definecolor{boxcolorexplanation}{RGB}{255,255,255}
-% \definecolor{boxcolorexamples}{RGB}{255,255,255}
-% \definecolor{headercolfade}{RGB}{132,63,64}
-
-\definecolor{headercolfade}{RGB}{35,39,64}
-
-
-%\definecolor{boxcolorexamples}{RGB}{175,217,217}
 
 
 \definecolor{boxcolorsimple}{RGB}{186,231,185} 
 \definecolor{boxcolordetails}{RGB}{170,205,213}
 \definecolor{boxcolorexplanation}{RGB}{205,190,160}
 \definecolor{boxcolorexamples}{RGB}{170,205,213}
-%\definecolor{headercolfade}{RGB}{132,63,64}
+\definecolor{headercolfade}{RGB}{35,39,64}
 
 
-\definecolor{highlightcolor}{RGB}{0,0,0}
+
+% \definecolor{highlightcolor}{RGB}{0,0,0}
 
 \newcommand{\hlt}[1]{{\bf\color{highlightcolor} #1}}
 
@@ -76,18 +48,17 @@
 	\vspace{-0.4em}
 }
 
-%\newcommand{\endblockmodifier}{
-%}
-
-
+% ,
+% 	boxColorOne=boxcolorsimple,
+% 	headerColorOne=boxcolorsimple, 
+% 	headerColorTwo=headercolfade
 \newcommand{\blockbasic}[3]{
-	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolorsimple,
-	headerColorOne=boxcolorsimple, headerColorTwo=headercolfade}{
+	\headerbox{#1}{name=#2,#3}{
 	\startblockmodifiers
 	\input{#2}
-	%\endblockmodifiers
 	}
 }
+
 
 \newcommand{\blockdetail}[3]{
 	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolordetails,
@@ -99,8 +70,10 @@
 }
 
 \newcommand{\blockexplain}[3]{
-	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolorexplanation,
-	headerColorOne=boxcolorexplanation, headerColorTwo=headercolfade}{
+	\headerbox{#1}{name=#2,#3,
+	boxColorOne=boxcolorexplanation,
+	headerColorOne=boxcolorexplanation, 
+	headerColorTwo=headercolfade}{
 	\startblockmodifiers
 	\input{#2}
 	%\endblockmodifiers
@@ -109,8 +82,10 @@
 
 
 \newcommand{\blockexample}[3]{
-	\headerbox{#1}{name=#2,#3,boxColorOne=boxcolorexamples,
-	headerColorOne=boxcolorexamples, headerColorTwo=headercolfade}{
+	\headerbox{#1}{name=#2,#3,
+	boxColorOne=boxcolorexamples,
+	headerColorOne=boxcolorexamples, 
+	headerColorTwo=headercolfade}{
 	\startblockmodifiers
 	\input{#2}
 	%\endblockmodifiers
@@ -208,13 +183,13 @@
 % 	headerColorTwo=headercol2,
 % 	headerFontColor=headerfontcol,
 	% Only simple background color used, no shading, so boxColorTwo isn't necessary
-	boxColorOne=boxcolor,
+	boxColorOne=bordercol,
 % 	headershape=roundedright,
 	headerfont=\Large\bf, 
 	textborder=rectangle,
 	background=none,
 	headerborder=open,
-% 	boxshade=plain
+    boxshade=plain
 	%textfont=\sf
 }
 %\rm Roman.
