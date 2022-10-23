@@ -4,3 +4,13 @@ main.aux
 main.log
 
 main.pdf
+
+.DS_Store
+
+main.synctex.gz
+
+motivation.log
+
+system.tex
+
+texput.log
