@@ -1,17 +1,8 @@
 
+The elements of the web interface are explained in the figure below.
 
-We want to find the well trajectory in the stratigraphic vertical depth coordinates (\textbf{SVD function}) given one or several log pairs consisting of one current lateral and one offset well log. 
-We use a trained MDN from \cite{multi-modal-journal} which is trained  to find SVD functions providing a match between the lateral and offset logs and their likely geological extrapolations ahead of data.  
-MDN also learns likely geological configurations from training data and assigns a probability to each function.
-% The probabilities of the SVD functions are learned
-% are estimated by learning the mismatches together with 
-% likely geological configurations from training data.
+\fig{The visual instructions of the web interface}{figs/instructions-slide.png}{28}
 
 
-\fig{The stratigraphic inversion problem. The heat map on the right plot indicates the log mismatch \cite{multi-modal-spwla}.}{figs/res_f0.pdf}{18}
 
-At each interpretation step, we have the likely SVD functions from the previous step and their probabilities. We use the final points of the previous interpretations as the starting points for the new interpretations. To avoid the curse of dimensionality, we merge coinciding points into a single point with increased probability, while realizations with low probability are disregarded. 
-
-Finally, we use the offset log to compute the ROP for each predicted stratigraphic curve. 
-The curves' probabilities are converted into the corresponding ROP distributions ahead of data.
-% statistical estimates from the resulting ROP probability distributions.
+The final score accounts for the total length drilled, the final length of the well, and the number of stuck times. 

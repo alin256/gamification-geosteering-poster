@@ -38,7 +38,7 @@
 
 % \definecolor{highlightcolor}{RGB}{0,0,0}
 
-\newcommand{\hlt}[1]{{\bf\color{highlightcolor} #1}}
+\newcommand{\hlt}[1]{{\bf #1}}
 
 \newcommand{\startblockmodifiers}{\sf
 	%\large
@@ -94,7 +94,8 @@
 	}
 }
 
-\newcommand{\TODO}[1]{{\bf\color{highlightcolor} TODO: #1}}
+\newcommand{\TODO}[1]{{\bf\color{red} TODO: #1}}
+\newcommand{\todo}[1]{\TODO{#1}}
 
 \newcommand{\fig}[3]{
 %{\centering{\vspace{0.2em}
@@ -105,6 +106,20 @@
 \smaller\it
 #1
 \includegraphics[height=#3em]{#2}
+\vspace{-0.9em}
+\end{center}
+}
+
+\newcommand{\figdouble}[4]{
+%{\centering{\vspace{0.2em}
+%\smaller\it
+%	#1}
+\begin{center}
+\vspace{-0.5em}
+\smaller\it
+#1
+\includegraphics[height=#4em]{#2}
+\includegraphics[height=#4em]{#3}
 \vspace{-0.9em}
 \end{center}
 }
@@ -214,7 +229,7 @@
 			%Replace me
 %		\end{minipage}
 %	}
-
+\includegraphics[height=8em]{figs/preview-down-crop-square-narrow.png}
 }
 %%% Title %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {\bf
@@ -225,9 +240,7 @@
 	%\textls
     % Sequential multi-realization probabilistic interpretation of well logs by a deep-learning method
     % Probabilistic log interpretation and extrapolation with deep learning
-    AI-based multi-modal interpretation of logs
-    % with AI \\
-    for ahead-of-bit probabilistic ROP prediction 
+	Gamification of shallow geosteering
 }
 %%% Authors %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\rm Roman.
@@ -241,9 +254,9 @@
 %\tt Typewriter.
 {\sf
 	\vspace{0.8em} 
-	Adrian Ambrus, Sergey Alyaev, Nazanin Jahani, Ahmed H. Elsheikh\\
+    Sergey Alyaev, NORCE Norwegian Research Centre\\
 		{\smaller\tt \setlength{\unitlength}{1em} 
-		E-mail:aamb@norceresearch.no}
+		E-mail:saly@norceresearch.no}
 }
 %%% Logo %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
@@ -267,7 +280,7 @@
 
 %\blockbasic{Model problem}{modelProblem}{column=0,below=motivation}
 
-\blockexplain{Method}{method}{column=1,row=0,span=2}
+\blockexample{Instructions}{instructions}{column=1,row=0,span=2}
 
 %end of column 0
 
@@ -280,15 +293,21 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\blockexample{Numerical results}{numericalResults}{column=1,span=2,below=method}
+%\blockexample{Numerical results}{numericalResults}{column=1,span=2,below=instructions}
+
+\blockexample{Try it yourself}{challange}{column=1,below=instructions}
+
+
 
 %\blockexample{Numerical results}{numericalResults2}{column=2,below=errorContributions}
 
 
-\blockbasic{Conclusions}{conclusion}{column=1,span=2,below=numericalResults}
+\blockbasic{Conclusions}{conclusion}{column=1,span=2,below=challange}
+
+\blockexample{Scores}{scores}{column=2,below=instructions,above=conclusion}
 
 
-\blockexplain{References}{references}{column=1,span=2,below=conclusion,above=bottom}
+\blockexplain{References}{references}{column=1,below=conclusion,above=bottom}
 
 %\blockexplain{ROP prediction}{ropPrediction}{column=2,row=0,above=numericalResults}
 
