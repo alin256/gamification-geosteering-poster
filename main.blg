@@ -4,19 +4,19 @@ The top-level auxiliary file: main.aux
 The style file: abbrv.bst
 Database file #1: citatPosterShort.bib
 Warning--entry type for "underbore2022" isn't style-file defined
---line 33 of file citatPosterShort.bib
+--line 32 of file citatPosterShort.bib
 You've used 5 entries,
             2118 wiz_defined-function locations,
-            522 strings with 4780 characters,
-and the built_in function-call counts, 1711 in all, are:
-= -- 158
+            521 strings with 4620 characters,
+and the built_in function-call counts, 1697 in all, are:
+= -- 153
 > -- 105
 < -- 1
 + -- 41
 - -- 36
-* -- 105
-:= -- 287
-add.period$ -- 16
+* -- 104
+:= -- 284
+add.period$ -- 15
 call.type$ -- 5
 change.case$ -- 33
 chr.to.int$ -- 0
@@ -24,7 +24,7 @@ cite$ -- 5
 duplicate$ -- 56
 empty$ -- 134
 format.name$ -- 36
-if$ -- 364
+if$ -- 359
 int.to.chr$ -- 0
 int.to.str$ -- 5
 missing$ -- 2
@@ -34,7 +34,7 @@ pop$ -- 53
 preamble$ -- 1
 purify$ -- 28
 quote$ -- 0
-skip$ -- 44
+skip$ -- 46
 stack$ -- 0
 substring$ -- 52
 swap$ -- 14
@@ -45,5 +45,5 @@ type$ -- 20
 warning$ -- 0
 while$ -- 13
 width$ -- 6
-write$ -- 53
+write$ -- 52
 (There was 1 warning)

@@ -9,13 +9,13 @@ G.~Hillhouse and {Practical Engineering}.
 E.~P. Johnson, E.~Morley~Beckman, C.~Goss, K.~Guy, and R.~Burton.
 \newblock Using directional drilling techniques to intersect the american
   tunnel.
-\newblock In {\em Rocky Mountain Geo-Conference 2021}, pages 99--109. American
-  Society of Civil Engineers Reston, VA, 2021.
+\newblock In {\em Rocky Mountain Geo-Conference 2021}, pages 99--109. ASCER,
+  2021.
 
 \bibitem{underbore2022}
 D.~Shiffman, S.~Alyaev, {Denisovich}, {ArztKlein}, and {tyomka896}.
-\newblock alin256/directional-boring: v0.9. horizontal directional drilling
-  simulation game., 2022.
+\newblock {alin256/Directional-Boring: v0.9. Horizontal Directional Drilling
+  Simulation Game}, 2022.
 
 \bibitem{coding2022}
 D.~Shiffman and {The Coding Train}.
@@ -25,9 +25,7 @@ D.~Shiffman and {The Coding Train}.
 \bibitem{ungemach2021real}
 P.~Ungemach, M.~Antics, D.~Di~Tommaso, and F.~Casali.
 \newblock Real time geosteering integrated services. a key issue in maximizing
-  geothermal exposure and minimizing drilling and completion risks. a paris
-  basin case study.
-\newblock In {\em SPE/IADC International Drilling Conference and Exhibition}.
-  OnePetro, 2021.
+  geothermal exposure...
+\newblock In {\em SPE/IADC IDCE}, 2021.
 
 \end{thebibliography}
